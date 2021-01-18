@@ -1,4 +1,5 @@
 const fs = require('fs');
+const jwt = require('jsonwebtoken');
 
 class JSONUserService {
 
@@ -35,6 +36,11 @@ class JSONUserService {
         fs.writeFile('services/json/users.json', JSON.stringify(changeUsers, null, 3), (err) => {
             if(err) throw err;
         });
+    }
+
+    login = (login) => {
+        const access = jwt.sign({login, type: 'access'}, 'secret', {expiresIn: 60 * 60});
+        return access;
     }
 }
 

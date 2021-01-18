@@ -1,13 +1,13 @@
-const userSevice = require('../services/user.service')
+const userService = require('../services/user.service')
 
 
 class UserController {
-    service = userSevice;
+    service = userService;
     get = (req, res) => {
         res
             .status(200)
             .send({
-                user: this.service.getUser()           
+                user: this.service.getUser()      
             })
     }
 
@@ -31,6 +31,15 @@ class UserController {
         res
             .status(200)
             .send(this.service.deleteUser(req.params.id))
+    }
+
+    login = (req, res) => {
+        res
+            .status(200)
+            .send(
+                this.service.login(
+                    req.login
+                ))
     }
 }
 
