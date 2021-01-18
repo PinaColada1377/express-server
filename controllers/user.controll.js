@@ -12,9 +12,10 @@ class UserController {
     }
 
     post = (req, res) => {
+        console.log(req.user)
         res
             .status(200)
-            .send(this.service.addUser(req.body))
+            .send(this.service.addUser(req.user))
     }
 
     update = (req, res) => {

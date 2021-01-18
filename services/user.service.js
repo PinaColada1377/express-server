@@ -9,10 +9,12 @@ class JSONUserService {
         return this.users;
     }
     
-    addUser = (user) => {        
-        this.users.push(user);
-        this.writeUsers(this.users);       
-     
+    addUser = (user) => { 
+        if (user !== undefined) {
+            console.log(user)        
+            this.users.push(user);
+            this.writeUsers(this.users);       
+        } else { return false}
     }
 
     update = (dataToUpdate, id) => {        

@@ -4,5 +4,11 @@
       "role": "admin",
       "login": "Vlad1",
       "password": "$2b$10$dOGukSd7dOKo0zA8JvpdEOjY2LBGoO4h3ydrpfw6MbGPqBF5.x862"
+   },
+   {
+      "id": "3",
+      "role": "user",
+      "login": "Vlad21",
+      "password": "$2b$10$FkhyTdLfUnLZ4zHWCgWUfeEaK06RlXJx9/4gbhg7ETZLT8Gbb4JW."
    }
 ]
