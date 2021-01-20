@@ -8,7 +8,7 @@ const registration = () => async (req, res, next) => {
         const hashPassword = await bcrypt.hash(req.body.password, salt);
         const candidate = await User.some(e => e.login === req.body.login);
         if(!candidate){
-            const user = {id: req.body.id, role: req.body.role, login: req.body.login, password: hashPassword};
+            const user = {email: req.body.email, role: req.body.role, login: req.body.login, password: hashPassword};
             req.user = user
         }
         else {

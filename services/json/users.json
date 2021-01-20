@@ -1,14 +1,16 @@
 [
    {
       "id": "1",
+      "email": "gmail1@gmail.com",
       "role": "admin",
-      "login": "Vlad1",
-      "password": "$2b$10$dOGukSd7dOKo0zA8JvpdEOjY2LBGoO4h3ydrpfw6MbGPqBF5.x862"
+      "login": "User1",
+      "password": "$2b$10$Tbxi1veAAW9zBr9w4dNLce3ojwXoLAmlW.OVgI.OLb7.ZT2cJdkW."
    },
    {
-      "id": "3",
+      "id": "1",
+      "email": "gmail2@gmail.com",
       "role": "user",
-      "login": "Vlad21",
-      "password": "$2b$10$FkhyTdLfUnLZ4zHWCgWUfeEaK06RlXJx9/4gbhg7ETZLT8Gbb4JW."
+      "login": "User2",
+      "password": "$2b$10$AnSN7oR6YnRPwG00iO4UZOTEZ9Cw8mXeWha2ktXWyBILio5QyueF."
    }
 ]
