@@ -12,18 +12,18 @@ class UserController {
     }
 
     post = (req, res) => {
-        console.log(req.user)
         res
             .status(200)
-            .send(this.service.addUser(req.user))
+            .send(this.service.addUser(req.body))
     }
 
     update = (req, res) => {
-       res 
+        res 
             .status(200)
             .send(
-                this.service.update(
-                    req.body,
+                this.service.update({
+                    ...JSON.stringify(req.body.data),
+                    avatar: req.file.path},
                     req.params.id)
             )
     }
@@ -39,7 +39,7 @@ class UserController {
             .status(200)
             .send(
                 this.service.login(
-                    req.login
+                    req.user
                 ))
     }
 }

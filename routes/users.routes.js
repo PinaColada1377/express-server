@@ -1,20 +1,18 @@
 const express = require('express');
 const router = express.Router();
 
-const validForCreate = require('../middleware/validation.create');
-const createUserSchema = require('../validation-schemes/user.scheme.create');
-const validForUpdate = require('../middleware/validation.update');
-const updateUserSchema = require('../validation-schemes/user.scheme.update');
+const valid = require('../middleware/validation');
+const UserShema = require('../validation-schemes/user.scheme');;
 const auth = require('../middleware/auth');
-const registr = require('../middleware/registration')
 const controller = require('../controllers/user.controll');
+const multer = require('../middleware/multer');
 
 
 router
     .get('/', controller.get)
-    .post('/', validForCreate(createUserSchema), registr, controller.post) 
-    .put('/:id', validForUpdate(updateUserSchema), controller.update)
-    .put('/', auth('user'), controller.login)
+    .post('/', valid.validForCreate(UserShema.createUserSchema), controller.post) 
+    .put('/:id',  multer, controller.update)
+    .put('/', auth('admin'), controller.login)
     .delete('/:id', controller.delete)
 
 module.exports = router;
