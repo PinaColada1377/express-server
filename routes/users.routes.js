@@ -10,8 +10,8 @@ const multer = require('../middleware/multer');
 
 router
     .get('/', controller.get)
-    .post('/', valid.validForCreate(UserShema.createUserSchema), controller.post) 
-    .put('/:id',  multer, controller.update)
+    .post('/', valid(UserShema.createUserSchema), controller.post) 
+    .put('/:id', valid(UserShema.updateUserSchema), multer, controller.update)
     .put('/', auth('admin'), controller.login)
     .delete('/:id', controller.delete)
 
